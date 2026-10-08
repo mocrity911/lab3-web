@@ -1,0 +1,209 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $bg-page;
+  color: $text-dark;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.header {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: $navy-dark;
+
+    span {
+      color: $gold;
+    }
+  }
+
+  .nav a {
+    color: $text-muted;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    @include transition-fast;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+}
+
+.main-container {
+  width: 100%;
+  max-width: 960px;
+  margin-top: 60px;
+}
+
+.law-card {
+  background: $card-bg;
+  border-radius: 20px;
+  padding: 48px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+  @include transition-fast;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .content {
+    flex: 1;
+
+    .tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: $gold-hover;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: $navy-dark;
+      margin-bottom: 14px;
+
+      span {
+        color: $gold;
+        display: block;
+      }
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .services-list {
+      list-style: none;
+      margin-bottom: 30px;
+
+      li {
+        font-size: 14px;
+        font-weight: 600;
+        color: $navy-dark;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          color: $gold;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+
+      .btn {
+        padding: 12px 22px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        @include transition-fast;
+
+        &-primary {
+          background-color: $navy-dark;
+          color: white;
+
+          &:hover {
+            background-color: $gold;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+          }
+
+          &:active {
+            transform: translateY(-1px);
+          }
+        }
+
+        &-secondary {
+          background-color: transparent;
+          color: $navy-dark;
+          border: 1px solid #cbd5e1;
+
+          &:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.08);
+          }
+
+          &:active {
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+
+  .image-box {
+    width: 280px;
+    height: 320px;
+    background: linear-gradient(135deg, $navy-dark 0%, $navy-accent 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 24px;
+
+    .experience-badge {
+      text-align: center;
+      color: white;
+
+      .num {
+        display: block;
+        font-size: 54px;
+        font-weight: 900;
+        color: $gold;
+        line-height: 1;
+      }
+
+      .text {
+        font-size: 14px;
+        font-weight: 500;
+        opacity: 0.9;
+        margin-top: 8px;
+        display: block;
+      }
+    }
+  }
+}
